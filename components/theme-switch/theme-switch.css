@@ -1,0 +1,37 @@
+/* Theme Switch Component */
+.theme-switch {
+  position: relative;
+  cursor: pointer;
+  appearance: none;
+  width: 50px;
+  height: 26px;
+  background-color: #ededed;
+  border-radius: 13px;
+  border: none;
+  outline: none;
+}
+
+.theme-switch::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #323950;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: left 0.7s, background-image 0.7s;
+  background-image: url("light-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.theme-switch:checked::after {
+  left: 27px;
+}
+
+/* Dark mode styles for the switch */
+body.dark .theme-switch::after {
+  background-image: url("dark-icon.svg");
+}
